@@ -1,14 +1,15 @@
 # A code written by Sam Siljee based on the game Mastermind
-# 2nd December 2020
+# created 2nd December 2020
+# last modified 9th February 2023
 
 # Things to be improved still:
-# 1. scoring not yet entirely compatible with some combinations of repeating colours
-# 2. give an option to change the number of holes
+# 1. Scoring logic is not yet entirely compatible with some combinations of colour repitition
+# 2. Give an option to change the number of holes
 
 # load appropriate packages
 library(tidyverse)
 
-# Write the function
+# Create the function
 mastermind <- function(n = 6, x = FALSE){
     # define the colours
     colours <- c("yellow", "red", "blue", "purple", "green", "orange", "black", "white", "brown", "grey", "pink")
@@ -17,8 +18,30 @@ mastermind <- function(n = 6, x = FALSE){
     namedcolours <- setNames(colours, colours)
     
     # create playing board
-    round = 0
-    board <- data.frame(first = NA, second = NA, third = NA, fourth = NA, black = NA, white = NA, round = round)
+    round <- 0
+    board <- data.frame(first = NA,
+                        second = NA,
+                        third = NA,
+                        fourth = NA,
+                        black = NA,
+                        white = NA,
+                        round = round,
+                        clue_1_y = NA,
+                        clue_2_y = NA,
+                        clue_3_y = NA,
+                        clue_4_y = NA,
+                        clue_1_x = NA,
+                        clue_2_x = NA,
+                        clue_3_x = NA,
+                        clue_4_x = NA,
+                        clue_1_white_alpha = NA,
+                        clue_2_white_alpha = NA,
+                        clue_3_white_alpha = NA,
+                        clue_4_white_alpha = NA,
+                        clue_1_black_alpha = NA,
+                        clue_2_black_alpha = NA,
+                        clue_3_black_alpha = NA,
+                        clue_4_black_alpha = NA,)
     ans = NA
     
     # set the solution
@@ -74,8 +97,10 @@ mastermind <- function(n = 6, x = FALSE){
             geom_point(aes(x = 2, y = round, colour = second), size = 10) + 
             geom_point(aes(x = 3, y = round, colour = third), size = 10) + 
             geom_point(aes(x = 4, y = round, colour = fourth), size = 10) +
-            theme(legend.position = "none") +
-            xlab(NA)
+            xlim(0.7, 5.3) +
+            xlab("Position") +
+            theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), legend.position = "none")
+            
         print(graphic_board)
         
     }
