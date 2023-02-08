@@ -26,10 +26,6 @@ mastermind <- function(n = 6, x = FALSE){
                         black = NA,
                         white = NA,
                         round = round,
-                        clue_1_y = NA,
-                        clue_2_y = NA,
-                        clue_3_y = NA,
-                        clue_4_y = NA,
                         clue_1_x = NA,
                         clue_2_x = NA,
                         clue_3_x = NA,
@@ -88,7 +84,7 @@ mastermind <- function(n = 6, x = FALSE){
         board <- rbind(board, guess_vector)
         
         # print current board (table format)
-        print(board[-1, ])
+        print(board[-1, 1:7])
         
         # print current board (graphic format)
         graphic_board <- board[-1, ] %>% ggplot() + 
