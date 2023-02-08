@@ -41,7 +41,7 @@ mastermind <- function(n = 6, x = FALSE){
                         clue_1_black_alpha = NA,
                         clue_2_black_alpha = NA,
                         clue_3_black_alpha = NA,
-                        clue_4_black_alpha = NA,)
+                        clue_4_black_alpha = NA)
     ans = NA
     
     # set the solution
