@@ -94,14 +94,14 @@ mastermind <- function(n = 6, x = FALSE){
           geom_point(aes(x = 2, y = round, colour = second), size = 15) +
           geom_point(aes(x = 3, y = round, colour = third), size = 15) +
           geom_point(aes(x = 4, y = round, colour = fourth), size = 15) +
-          geom_point(aes(x = 4.7, y = round, size = clue_1_black_size), colour = "black", alpha = 0.5) +
-          geom_point(aes(x = 4.9, y = round, size = clue_2_black_size), colour = "black", alpha = 0.5) +
-          geom_point(aes(x = 5.1, y = round, size = clue_3_black_size), colour = "black", alpha = 0.5) +
-          geom_point(aes(x = 5.3, y = round, size = clue_4_black_size), colour = "black", alpha = 0.5) +
-          geom_point(aes(x = 4.7, y = round, size = clue_1_white_size), colour = "white", alpha = 0.5) +
-          geom_point(aes(x = 4.9, y = round, size = clue_2_white_size), colour = "white", alpha = 0.5) +
-          geom_point(aes(x = 5.1, y = round, size = clue_3_white_size), colour = "white", alpha = 0.5) +
-          geom_point(aes(x = 5.3, y = round, size = clue_4_white_size), colour = "white", alpha = 0.5) +
+          geom_point(aes(x = 4.7, y = round, size = as.numeric(clue_1_black_size)), colour = "black", alpha = 0.5) +
+          geom_point(aes(x = 4.9, y = round, size = as.numeric(clue_2_black_size)), colour = "black", alpha = 0.5) +
+          geom_point(aes(x = 5.1, y = round, size = as.numeric(clue_3_black_size)), colour = "black", alpha = 0.5) +
+          geom_point(aes(x = 5.3, y = round, size = as.numeric(clue_4_black_size)), colour = "black", alpha = 0.5) +
+          geom_point(aes(x = 4.7, y = round, size = as.numeric(clue_1_white_size)), colour = "white", alpha = 0.5) +
+          geom_point(aes(x = 4.9, y = round, size = as.numeric(clue_2_white_size)), colour = "white", alpha = 0.5) +
+          geom_point(aes(x = 5.1, y = round, size = as.numeric(clue_3_white_size)), colour = "white", alpha = 0.5) +
+          geom_point(aes(x = 5.3, y = round, size = as.numeric(clue_4_white_size)), colour = "white", alpha = 0.5) +
           xlim(0.7, 5.5) +
           xlab("Position") +
           theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), legend.position = "none")
