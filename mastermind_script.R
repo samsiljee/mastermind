@@ -10,7 +10,7 @@
 library(tidyverse)
 
 # Create the function
-mastermind <- function(n = 6, x = FALSE){
+mastermind <- function(number_of_colours = 6, replacement = FALSE){
   # define the colours
   colours <- c("yellow", "red", "blue", "purple", "green", "orange", "black", "white", "brown", "grey", "pink")
 
@@ -36,7 +36,9 @@ mastermind <- function(n = 6, x = FALSE){
                       clue_4_white_size = NA)
   ans = NA
   # set the solution
-  solution <- paste(sample(colours[1:n], 4, replace = x))
+  solution <- paste(sample(colours[1:number_of_colours], 4, replacement = x))
+  
+  # Welcome message with some basic instructions
   cat("Welcome to this game of Mastermind, enter quit to exit the game or show to reveal the answer.\n
   The number of colours can be chosen with a numerical value for the first argument when starting mastermind, maximum of eleven.\n
       Repetition of colours can be chosen as an option by entering TRUE as the second argument. default is FALSE.\n")
